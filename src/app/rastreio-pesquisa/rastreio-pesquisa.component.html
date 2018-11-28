@@ -1,0 +1,26 @@
+<div class="ui-g">
+    <div class="ui-g-12">
+      <p-table [value]="steps">
+        <ng-template pTemplate="caption">
+          Rastrear encomenda
+        </ng-template>
+        <ng-template pTemplate="header">
+          <tr>
+            <th class="col-header-id">Código</th>
+            <th>Cliente</th>
+            <th>Local</th>
+            <th>Recebimento</th>
+          </tr>
+        </ng-template>
+
+        <ng-template pTemplate="body" let-step>
+          <tr>
+            <td>{{ encomenda.id }}</td>
+            <td>{{ step.encomenda.cliente.nome }}</td>
+            <td>{{ step.encomenda.local.nome }}</td>
+            <td class="col-data">{{ step.recebimento | date: 'dd/MM/yyyy'}}</td>
+          </tr>
+        </ng-template>
+      </p-table>
+    </div>
+  </div>
